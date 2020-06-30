@@ -1,0 +1,28 @@
+.click-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin: 32px 0;
+}
+
+.click-square {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+  background-color: white;
+  margin: 0;
+}
+
+.click-square:hover {
+  background-color: #EEEEEE;
+}
+
+.black {
+  background-color: black;
+}
+
+.black:hover {
+  background-color: #111111;
+}
