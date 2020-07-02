@@ -11,7 +11,8 @@ const ClickSquare = ({ going }) => {
   if (going) {
     return (
       <RecurserSquare 
-
+        color={clicked ? 'black' : 'white'}
+        size={100}
       />
     );
   }
