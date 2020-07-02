@@ -5,20 +5,21 @@ import './App.css';
 const App = () => {
   const [going, setGoing] = useState(false);
 
+  const body = 'Click on the grid below to define a patter and then "let \'er rip" to generate a fractal.';
+
   return (
     <>
       <h1>Reactal</h1>
       <h2>Recursively generate fractals in a react app.</h2>
-      <span>
-        Click on the grid below to define a pattern, and then `let 'er rip` to let react recursively generate a fractal.
-      </span>
+      <span>{body}</span>
       <ClickGrid going={going} />
       <button
+        type="button"
         onClick={() => {
           setGoing((g) => !g);
         }}
       >
-        {!going ? `Let 'er rip` : `Give 'er the ole' reset`}
+        {!going ? "Let 'er rip" : "Give 'er the ole' reset"}
       </button>
     </>
   );

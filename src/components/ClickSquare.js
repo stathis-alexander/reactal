@@ -1,38 +1,35 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import RecurserSquare from './RecurserSquare';
 
 import '../Clickers.css';
 
-const ClickSquare = ({ going }) => {
-  const [clicked, setClicked] = useState(false);
-  
+const ClickSquare = ({ going, clickSquare, pattern, clicked }) => {
+  const size = 100;
+
   if (going) {
-    return (
-      <RecurserSquare 
-        color={clicked ? 'black' : 'white'}
-        size={100}
-      />
-    );
+    return <RecurserSquare color={clicked ? 'black' : 'white'} pattern={pattern} size={size} />;
   }
 
   return (
     <div
-      onClick={() => {
-        setClicked((c) => !c);
-      }}
+      role="button"
+      onClick={clickSquare}
       className={`click-square ${clicked ? 'black' : ''}`}
+      style={{
+        height: size,
+        width: size,
+      }}
     />
   );
 };
 
 ClickSquare.propTypes = {
   going: PropTypes.bool.isRequired,
-};
-
-ClickSquare.defaultProps = {
-  going: false,
+  clicked: PropTypes.bool.isRequired,
+  clickSquare: PropTypes.func.isRequired,
+  pattern: PropTypes.array.isRequired,
 };
 
 export default ClickSquare;
