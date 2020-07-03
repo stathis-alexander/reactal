@@ -7,6 +7,8 @@ const App = () => {
 
   const body = 'Click on the grid below to define a patter and then "let \'er rip" to generate a fractal.';
 
+  const clickHandler = () => { setGoing(g => !g); };
+
   return (
     <>
       <h1>Reactal</h1>
@@ -15,10 +17,7 @@ const App = () => {
       <ClickGrid going={going} />
       <button
         type="button"
-        onClick={() => {
-          setGoing((g) => !g);
-        }}
-      >
+        onClick={clickHandler}>
         {!going ? "Let 'er rip" : "Give 'er the ole' reset"}
       </button>
     </>

@@ -9,7 +9,7 @@ const ClickSquare = ({ going, clickSquare, pattern, clicked }) => {
   const size = 100;
 
   if (going) {
-    return <RecurserSquare color={clicked ? 'black' : 'white'} pattern={pattern} size={size} />;
+    return <RecurserSquare color={'black'} pattern={pattern} size={size} />;
   }
 
   return (

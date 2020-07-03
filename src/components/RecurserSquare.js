@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const RecurserSquare = ({ pattern, color, size }) => {
-  if (size < 4 || color === 'white') {
+  if (size <= 5 || color === 'white') {
     return (
       <div
         style={{
@@ -19,7 +19,7 @@ const RecurserSquare = ({ pattern, color, size }) => {
       {pattern.map((x,i) => (
         <RecurserSquare
           color={color === 'black' && pattern[i] ? 'black' : 'white'}
-          size={size/5}
+          size={Math.ceil(size / 5)}
           pattern={pattern}
         />
       ))}
